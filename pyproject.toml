@@ -12,10 +12,6 @@ readme = "README.md"
 [project.urls]
 Home = "https://github.com/PatrickElmer/proto_tokenize"
 
-# [tool.cibuildwheel]
-# test-requires = "pytest"
-# test-command = "python3 -m pytest ./tests"
-
 [tool.hatch.version]
 path = "proto_tokenize.py"
 
