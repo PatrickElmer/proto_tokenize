@@ -41,3 +41,8 @@ jobs:
       # Uncomment the next two lines for publishing to pypi
       with:
         repository-url: https://test.pypi.org/legacy/
+
+    - name: Create Github release
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "*.tar.gz"
