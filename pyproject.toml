@@ -10,3 +10,7 @@ dynamic = ["version"]
 
 [project.urls]
 Home = "https://github.com/PatrickElmer/tokenize"
+
+[tool.cibuildwheel]
+test-requires = "pytest"
+test-command = "python3 -m pytest ./tests"
