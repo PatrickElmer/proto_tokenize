@@ -44,5 +44,3 @@ jobs:
 
     - name: Create Github release
       uses: ncipollo/release-action@v1
-      with:
-        artifacts: "*.tar.gz"
