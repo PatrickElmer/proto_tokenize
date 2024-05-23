@@ -1,4 +1,4 @@
-from tokenize import tokenize
+from proto_tokenize import tokenize
 
 
 def test_tokenize():

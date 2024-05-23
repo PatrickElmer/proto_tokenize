@@ -34,7 +34,7 @@ jobs:
   #   runs-on: ubuntu-latest
   #   environment:
   #     name: pypi
-  #     url: https://pypi.org/project/tokenize
+  #     url: https://pypi.org/project/proto_tokenize
   #   permissions:
   #     id-token: write  # IMPORTANT: mandatory for trusted publishing
 
@@ -98,7 +98,7 @@ jobs:
 
     environment:
       name: testpypi
-      url: https://test.pypi.org/project/tokenize
+      url: https://test.pypi.org/project/proto_tokenize
 
     permissions:
       id-token: write  # IMPORTANT: mandatory for trusted publishing
