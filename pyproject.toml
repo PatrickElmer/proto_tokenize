@@ -1,16 +1,28 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
 name = "proto_tokenize"
+dynamic = ["version"]
 authors = [{name = "Patrick Elmer", email = "patrick@elmer.ws"}]
 description = "Convert IPA transcribed words into sequence tokens."
-dynamic = ["version"]
 
 [project.urls]
-Home = "https://github.com/PatrickElmer/tokenize"
+Home = "https://github.com/PatrickElmer/proto_tokenize"
 
-[tool.cibuildwheel]
-test-requires = "pytest"
-test-command = "python3 -m pytest ./tests"
+# [tool.cibuildwheel]
+# test-requires = "pytest"
+# test-command = "python3 -m pytest ./tests"
+
+[tool.hatch.version]
+path = "proto_tokenize.py"
+
+[tool.hatch.envs.default]
+dependencies = ["pytest"]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+
+[tool.hatch.build.targets.wheel.hooks.mypyc]
+dependencies = ["hatch-mypyc"]
