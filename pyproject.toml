@@ -5,7 +5,8 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "proto_tokenize"
 authors = [{name = "Patrick Elmer", email = "patrick@elmer.ws"}]
-dynamic = ["version", "description"]
+description = "Convert IPA transcribed words into sequence tokens."
+dynamic = ["version"]
 
 [project.urls]
 Home = "https://github.com/PatrickElmer/tokenize"
