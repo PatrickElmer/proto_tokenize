@@ -43,7 +43,7 @@ jobs:
         repository-url: https://test.pypi.org/legacy/
 
   release:
-    - name: Create Github release
+    name: Create Github release
     #   uses: ncipollo/release-action@v1
     runs-on: ubuntu-latest
     steps:
