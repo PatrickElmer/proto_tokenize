@@ -12,7 +12,7 @@ def tokenize(
     """Takes in a word as a string and returns its tokens as a list."""
 
     if not word:
-        return ()
+        return []
 
     tokenized = []
     start = 0
