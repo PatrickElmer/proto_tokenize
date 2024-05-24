@@ -1,15 +1,15 @@
 """Convert IPA transcribed words into sequence tokens."""
 
 
-__version__ = "0.9.7"
+__version__ = "0.9.8"
 
 
 def tokenize(
     word: str,
     combiners=set("͜͡‿"),
     modifiers=set("̥̬̊ʰ̹̜̟̠̩̯̈̽˞̤̰̼ʷʲˠˤ̴̝̞̘̙̪̺̻̃ⁿˡ̚ːˑ̆̋˥́˦̄˧̀˨̏˩ꜜꜛ̌̂᷄᷅᷈↗↘ʱʳʴʵʶˀ̢᷆᷇᷉ʼ"),
-) -> tuple[str] | tuple:
-    """Takes in a word as a string and returns its tokens as a tuple."""
+) -> list[str] | list:
+    """Takes in a word as a string and returns its tokens as a list."""
 
     if not word:
         return ()
@@ -26,4 +26,4 @@ def tokenize(
             start = i
     tokenized.append(word[start:])
 
-    return tuple(tokenized)
+    return tokenized
