@@ -23,8 +23,17 @@ def test_word_with_modifier():
 def test_word_with_combiner():
     assert tokenize("at͡sa") == ["a", "t͡s", "a"]
 
+def test_prenasalized():
+    assert tokenize("ᵐ͡b") == ["ᵐ͡b"]
+
 def test_word_with_combiner_and_modifier():
     assert tokenize("at͡suːi") == ["a", "t͡s", "uː", "i"]
+
+def test_custom_modifier():
+    assert tokenize("ts", modifiers="s") == ["ts"]
+
+def test_custom_combiner():
+    assert tokenize("a-b", combiners="-") == ["a-b"]
 
 def test_missing_argument():
     with pytest.raises(TypeError):
