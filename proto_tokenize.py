@@ -1,7 +1,7 @@
 """Convert IPA transcribed words into sequence tokens."""
 
 
-__version__ = "0.9.3"
+__version__ = "0.9.4"
 
 
 def tokenize(

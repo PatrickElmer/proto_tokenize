@@ -42,5 +42,17 @@ jobs:
       with:
         repository-url: https://test.pypi.org/legacy/
 
+  release:
     - name: Create Github release
-      uses: ncipollo/release-action@v1
+    #   uses: ncipollo/release-action@v1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Github release
+        id: release
+        uses: dev-build-deploy/release-me@v0
+        with:
+          token: ${{ github.token }}
+          prefix: v                    # OPTIONAL; prefixes the version with v (e.g. v1.0.0)
+
+      - if: ${{ steps.release.outputs.created }}
+        run: echo ${{ fromJSON(steps.release.outputs.release).tag_name }}
