@@ -24,7 +24,11 @@ def test_word_with_combiner():
     assert tokenize("at͡sa") == ["a", "t͡s", "a"]
 
 def test_prenasalized():
-    assert tokenize("ᵐ͡b") == ["ᵐ͡b"]
+    assert tokenize("aᵐ͡ba") == ["a", "ᵐ͡b", "a"]
+
+def test_wrong_prenasalization_if_nasal_in_modifiers():
+    assert tokenize("aⁿ͡ta") == ["aⁿ͡t", "a"]
+    assert tokenize("aⁿ͡ta", modifiers="") == ["a", "ⁿ͡t", "a"]
 
 def test_word_with_combiner_and_modifier():
     assert tokenize("at͡suːi") == ["a", "t͡s", "uː", "i"]
