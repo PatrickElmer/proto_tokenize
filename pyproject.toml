@@ -12,8 +12,11 @@ readme = "README.md"
 [project.urls]
 Home = "https://github.com/PatrickElmer/proto_tokenize"
 
+[tool.pytest.ini_options]
+pythonpath = ["src/proto_tokenize"]
+
 [tool.hatch.version]
-path = "proto_tokenize.py"
+path = "src/proto_tokenize/__init__.py"
 
 [tool.hatch.envs.default]
 dependencies = ["pytest"]
@@ -23,3 +26,4 @@ test = "pytest {args:tests}"
 
 [tool.hatch.build.targets.wheel.hooks.mypyc]
 dependencies = ["hatch-mypyc"]
+include = ["/src/proto_tokenize/proto_tokenize.py"]
