@@ -28,16 +28,16 @@ def test_prenasalized():
 
 def test_wrong_prenasalization_if_nasal_in_modifiers():
     assert tokenize("aⁿ͡ta") == ["aⁿ͡t", "a"]
-    assert tokenize("aⁿ͡ta", modifiers="") == ["a", "ⁿ͡t", "a"]
+    assert tokenize("aⁿ͡ta", modifiers={""}) == ["a", "ⁿ͡t", "a"]
 
 def test_word_with_combiner_and_modifier():
     assert tokenize("at͡suːi") == ["a", "t͡s", "uː", "i"]
 
 def test_custom_modifier():
-    assert tokenize("ts", modifiers="s") == ["ts"]
+    assert tokenize("ts", modifiers={"s"}) == ["ts"]
 
 def test_custom_combiner():
-    assert tokenize("a-b", combiners="-") == ["a-b"]
+    assert tokenize("a-b", combiners={"-"}) == ["a-b"]
 
 def test_missing_argument():
     with pytest.raises(TypeError):
