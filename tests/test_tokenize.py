@@ -42,3 +42,6 @@ def test_custom_combiner():
 def test_missing_argument():
     with pytest.raises(TypeError):
         tokenize()
+
+def test_stress():
+    assert tokenize("ˈaˌb") == ["ˈa", "ˌb"]
