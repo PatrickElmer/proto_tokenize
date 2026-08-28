@@ -4,13 +4,13 @@ def tokenize(
     proclitics="ˈˌ͜͡‿",
 ) -> list[str] | list:
     """Takes in a word as a string and returns its tokens as a list."""
-    start = 0
-    tokens = []
+    segments, start, previous = [], 0, word[:1]
 
     for index, character in enumerate(word[1:], 1):
-        if character not in diacritics and word[index - 1] not in proclitics:
-            tokens.append(word[start:index])
+        if character not in diacritics and previous not in proclitics:
+            segments.append(word[start:index])
             start = index
-    tokens.append(word[start:])
+        previous = character
+    segments.append(word[start:])
 
-    return tokens if word else []
+    return segments if word else []
